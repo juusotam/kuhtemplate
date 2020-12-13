@@ -43,7 +43,7 @@ beamer_kuh <- function(toc = FALSE,
 
   template <- find_resource("beamer_kuh", "template.tex")
 
-  load_resources_if_missing("beamer_kuh", c("KYS_sin_left.pdf", "KYS_val_left.pdf", "UEF_eng_vaaka_1_white.pdf"))
+  load_resources_if_missing("beamer_kuh", c("pictures/KYS_sin_left.pdf", "pictures/KYS_val_left.pdf", "pictures/UEF_eng_vaaka_1_white.pdf"))
 
   rmarkdown::beamer_presentation(template = template,
                                  toc = toc,
