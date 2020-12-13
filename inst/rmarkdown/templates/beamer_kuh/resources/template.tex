@@ -283,44 +283,44 @@ $if(institute)$\institute{$institute$}$endif$
 %
 % % Inner theme
 %
-% % Frame title
-% \defbeamertemplate*{frametitle}{kuh}[1][]{
-%     \setlength{\unitlength}{1mm}
-%     \begin{picture}(0,0)(0,0)
-%         %author
-%         \put(26,0){%
-%             \usebeamerfont{footline}
-%                 \usebeamercolor[fg]{headline}%
-%                 \ifx\insertinstitute\empty\else
-%                     \insertshortinstitute\quad|\quad
-%                 \fi
-%                 \ifx\insertauthor\empty\else
-%                     \insertshortauthor\quad|\quad
-%                 \fi
-%                 \insertdate
-%         }%
-%         % Blue background
-%         \put(-10,-15){\color{kuh-blue}\rule{\paperwidth}{12mm}}
-%         % KYS logo
-%         \put(-2,-15.5){\includegraphics[height=12.8mm]{KYS_val_left}}
-%         % Title
-%         \put(26,-12){%
-%             \begin{minipage}[c][30mm][c]{120mm}
-%                 \ifx\insertframetitle\empty\else
-%                 \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par%
-%                 \fi%
-%                 \ifx\insertframesubtitle\empty\else
-%                 \usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\par%
-%                 \fi%
-%             \end{minipage}
-%         }
-%         % UEF logo
-%         % $if(uef)$
-%         % \put(95, -15.5){\includegraphics[height=12.8mm]{pictures/UEF_eng_vaaka_1_white}}
-%         % $endif$
-%     \end{picture}
-%     \vspace{1cm}
-% }
+% Frame title
+\defbeamertemplate*{frametitle}{kuh}[1][]{
+    \setlength{\unitlength}{1mm}
+    \begin{picture}(0,0)(0,0)
+        %author
+        \put(26,0){%
+            \usebeamerfont{footline}
+                \usebeamercolor[fg]{headline}%
+                \ifx\insertinstitute\empty\else
+                    \insertshortinstitute\quad|\quad
+                \fi
+                \ifx\insertauthor\empty\else
+                    \insertshortauthor\quad|\quad
+                \fi
+                \insertdate
+        }%
+        % Blue background
+        \put(-10,-15){\color{kuh-blue}\rule{\paperwidth}{12mm}}
+        % KYS logo
+        \put(-2,-15.5){\includegraphics[height=12.8mm]{KYS_val_left}}
+        % Title
+        \put(26,-12){%
+            \begin{minipage}[c][30mm][c]{120mm}
+                \ifx\insertframetitle\empty\else
+                \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par%
+                \fi%
+                \ifx\insertframesubtitle\empty\else
+                \usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\par%
+                \fi%
+            \end{minipage}
+        }
+        % UEF logo
+        % $if(uef)$
+        % \put(95, -15.5){\includegraphics[height=12.8mm]{pictures/UEF_eng_vaaka_1_white}}
+        % $endif$
+    \end{picture}
+    % \vspace{1cm}
+}
 %
 \defbeamertemplate*{footline}{my footline}{%
     \ifnum\insertpagenumber=1
