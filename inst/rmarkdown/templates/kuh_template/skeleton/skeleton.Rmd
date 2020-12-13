@@ -13,7 +13,7 @@ output:
     dev: cairo_pdf 
     slide_level: 3
 make169: true
-#uef: false # set this true if you want also the UEF logo on content slides
+#uef: false # not working yet
 mainfont: "Open Sans" 
 titlefont: "Montserrat" 
 ---
