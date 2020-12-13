@@ -23,7 +23,7 @@
 #' # Compile the document
 #' rmarkdown::render("slide_deck/slide_deck.Rmd")
 #' }
-beamer_illinois <- function(toc = FALSE,
+beamer_kuh <- function(toc = FALSE,
                             slide_level = 2,
                             incremental = FALSE,
                             fig_width = 10,
