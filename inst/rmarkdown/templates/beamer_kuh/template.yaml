@@ -1,4 +1,4 @@
 name: KUH template
 description: >
    Document template for Kuopio University Hospital
-create_dir: FALSE
+create_dir: true
