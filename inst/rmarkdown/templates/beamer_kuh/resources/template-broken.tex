@@ -205,21 +205,6 @@ $endif$
 \setlength{\emergencystretch}{0em}  % prevent overfull lines
 \setlength{\parskip}{0pt}
 
-%\usepackage{showframe}
-%\fontfamily{Montserrat-TOsF}\selectfont
-
-
-\setbeamertemplate{footline}{%
-\hfill\usebeamertemplate***{navigation symbols}
-\hspace{1cm}\insertframenumber{}/\inserttotalframenumber}
-
-% \setbeamertemplate{navigation symbols}{%
-%   \hspace{1em}
-%   \usebeamerfont{footline}
-%   \insertframenumber / \inserttotalframenumber
-% }
-%\setbeamertemplate{navigation symbols}{}
-
 $if(title)$
 \title{$title$}
 $endif$
@@ -236,7 +221,161 @@ $endfor$
 
 $if(institute)$\institute{$institute$}$endif$
 
-\usetheme{kuh}
+
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+
+%Colour
+
+% Settings
+% \useinnertheme{kuh}
+% \useoutertheme{kuh}
+% \usecolortheme{kuh}
+% \usefonttheme{kuh}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+% Title page
+\defbeamertemplate*{title page}{kuh}[1][]{
+        \setlength{\unitlength}{1mm}
+        \begin{picture}(0,0)(0,0)
+            % Blue background
+            %\put(-10,-46.5){\color{aublue}\rule{\paperwidth}{72mm}}
+            % logo
+            \put(-2,18){\includegraphics[height=12.8mm]{KYS_sin_left}}
+            %\put(-2,-15.5){\includegraphics[height=12.8mm]{pictures/KYS_sin_fi_print_pdf}}
+
+            % Title
+            \put(25,21.5){%
+                \begin{minipage}[c][30mm][c]{120mm}
+                    \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par%
+                    \usebeamerfont{subtitle}\usebeamercolor[fg]{title}\insertsubtitle\par%
+                \end{minipage}
+            }
+            % author etc
+            \put(30,-5){%
+                \begin{minipage}[c][35mm][c]{100mm}
+                    \ifx\insertauthor\empty\else
+                        \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor%
+                        \vskip0.2cm%
+                    \fi%
+                    \ifx\insertdate\empty\else
+                        \usebeamerfont{author}\usebeamercolor[fg]{author}\insertdate%
+                    \fi%
+                \end{minipage}
+            }
+            % author etc
+            \put(30,-20){%
+                \begin{minipage}[c][35mm][c]{100mm}
+                \ifx\insertinstitute\empty\else
+                    \usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute%
+                \fi%
+                \end{minipage}
+            }
+    \end{picture}
+}
+
+% Frame title
+\defbeamertemplate*{frametitle}{kuh}[1][]{
+    \setlength{\unitlength}{1mm}
+    \begin{picture}(0,0)(0,0)
+        %author
+        \put(26,0){%
+            \usebeamerfont{footline}
+                \usebeamercolor[fg]{headline}%
+                \ifx\insertinstitute\empty\else
+                    \insertshortinstitute\quad|\quad
+                \fi
+                \ifx\insertauthor\empty\else
+                    \insertshortauthor\quad|\quad
+                \fi
+                \insertdate
+        }%
+        % Blue background
+        \put(-10,-15){\color{kuh-blue}\rule{\paperwidth}{12mm}}
+        % KYS logo
+        \put(-2,-15.5){\includegraphics[height=12.8mm]{KYS_val_left}}
+        % Title
+        \if(uef)
+        \put(26,-12){%
+            \begin{minipage}[c][30mm][c]{80mm}
+                \ifx\insertframetitle\empty\else
+                \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par%
+                \fi%
+                \ifx\insertframesubtitle\empty\else
+                \usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\par%
+                \fi%
+            \end{minipage}
+        }
+        \else
+        \put(26,-12){%
+            \begin{minipage}[c][30mm][c]{120mm}
+                \ifx\insertframetitle\empty\else
+                \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par%
+                \fi%
+                \ifx\insertframesubtitle\empty\else
+                \usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\par%
+                \fi%
+            \end{minipage}
+        }
+        \fi
+        % UEF logo - not working yet
+        % $if(uef)$
+        % \put(95, -15.5){\includegraphics[height=12.8mm]{pictures/UEF_eng_vaaka_1_white}}
+        % $endif$
+    \end{picture}
+    \vspace{1cm}
+}
+
+\defbeamertemplate*{footline}{my footline}{%
+    \ifnum\insertpagenumber=1
+    \hbox{%
+        \begin{beamercolorbox}[wd=\paperwidth,ht=.8ex,dp=1ex,center]{}%
+      % empty environment to raise height
+        \end{beamercolorbox}%
+    }%
+    \vskip0pt%
+    \else%
+        \Tiny{%
+            \hfill%
+		\vspace*{1pt}%
+            \insertframenumber/\inserttotalframenumber \hspace*{0.1cm}%
+            \newline%
+            \color{kuh-blue}{\rule{\paperwidth}{0.4mm}}\newline%
+            \color{kuh-blue}{\rule{\paperwidth}{.4mm}}%
+        }%
+    \fi%
+}
+
+\definecolor{kuh-blue}{cmyk}{0.85,0.21,0,0}
+\definecolor{kuh-blue80}{cmyk}{0.71,0.13,0,0}
+\definecolor{kuh-blue50}{cmyk}{0.52,0.03,0.03,0}
+\definecolor{kuh-red}{cmyk}{0,0.97,0.65,0}
+\definecolor{kuh-red80}{cmyk}{0,0.83,0.42,0}
+\definecolor{kuh-red50}{cmyk}{0,0.55,0.22,0}
+\definecolor{kuh-yellow}{cmyk}{0,0.04,0.87,0}
+\definecolor{kuh-yellow80}{cmyk}{0.02,0,078,0}
+\definecolor{kuh-yellow50}{cmyk}{0,0,0.49,0}
+\definecolor{kuh-black}{cmyk}{0,0,0,0.89}
+\definecolor{kuh-orange}{cmyk}{0,0.68,0.76,0}
+\definecolor{kuh-violet}{cmyk}{0.58,0.90,0,0}
+\definecolor{kuh-white}{cmyk}{0,0,0,0}
+
+% Settings
+\setbeamercolor*{title page header}{fg=white}
+\setbeamercolor*{frametitle}{fg=white}
+\setbeamercolor*{framesubtitle}{fg=white}
+\setbeamercolor*{headline}{fg=kuh-blue}
+\setbeamercolor*{author}{fg=kuh-blue}
+\setbeamercolor*{date}{fg=kuh-blue}
+\setbeamercolor*{title}{fg=kuh-blue}
+\setbeamercolor*{institute}{fg=kuh-blue}
+\setbeamercolor*{item}{fg=kuh-red}
+% Items
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+
 
 \begin{document}
 $if(title)$

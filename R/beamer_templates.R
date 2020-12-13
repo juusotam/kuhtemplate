@@ -34,7 +34,7 @@ beamer_kuh <- function(toc = FALSE,
                             df_print = "default",
                             fonttheme = "default",
                             highlight = "default",
-                            keep_tex = FALSE,
+                            keep_tex = TRUE,
                             latex_engine = "xelatex",
                             citation_package = c("default", "natbib", "biblatex"),
                             includes = NULL,
@@ -43,7 +43,8 @@ beamer_kuh <- function(toc = FALSE,
 
   template <- find_resource("beamer_kuh", "template.tex")
 
-  load_resources_if_missing("beamer_kuh", c("KYS_sin_left.pdf", "KYS_val_left.pdf", "UEF_eng_vaaka_1_white.pdf"))
+  load_resources_if_missing("beamer_kuh", c("KYS_sin_left.pdf", "KYS_val_left.pdf", "UEF_eng_vaaka_1_white.pdf", "beamercolorthemekuh.sty",
+                                            "beamerinnerthemekuh.sty", "beamerouterthemekuh.sty", "beamerthemekuh.sty"))
 
   rmarkdown::beamer_presentation(template = template,
                                  toc = toc,
