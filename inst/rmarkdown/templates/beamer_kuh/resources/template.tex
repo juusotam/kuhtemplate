@@ -242,45 +242,45 @@ $if(institute)$\institute{$institute$}$endif$
 \setbeamertemplate{blocks}[rounded][shadow=true]
 % % Outer template
 % % Title page
-% \defbeamertemplate*{title page}{kuh}[1][]
-% {
-%         \setlength{\unitlength}{1mm}
-%         \begin{picture}(0,0)(0,0)
-%             % Blue background
-%             %\put(-10,-46.5){\color{aublue}\rule{\paperwidth}{72mm}}
-%             % logo
-%             \put(-2,18){\includegraphics[height=12.8mm]{pictures/KYS_sin_left}}
-%             %\put(-2,-15.5){\includegraphics[height=12.8mm]{pictures/KYS_sin_fi_print_pdf}}
-%
-%             % Title
-%             \put(25,21.5){%
-%                 \begin{minipage}[c][30mm][c]{120mm}
-%                     \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par%
-%                     \usebeamerfont{subtitle}\usebeamercolor[fg]{title}\insertsubtitle\par%
-%                 \end{minipage}
-%             }
-%             % author etc
-%             \put(30,-5){%
-%                 \begin{minipage}[c][35mm][c]{100mm}
-%                     \ifx\insertauthor\empty\else
-%                         \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor%
-%                         \vskip0.2cm%
-%                     \fi%
-%                     \ifx\insertdate\empty\else
-%                         \usebeamerfont{author}\usebeamercolor[fg]{author}\insertdate%
-%                     \fi%
-%                 \end{minipage}
-%             }
-%             % author etc
-%             \put(30,-20){%
-%                 \begin{minipage}[c][35mm][c]{100mm}
-%                 \ifx\insertinstitute\empty\else
-%                     \usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute%
-%                 \fi%
-%                 \end{minipage}
-%             }
-%     \end{picture}
-% }
+\defbeamertemplate*{title page}{kuh}[1][]
+{
+        \setlength{\unitlength}{1mm}
+        \begin{picture}(0,0)(0,0)
+            % Blue background
+            %\put(-10,-46.5){\color{aublue}\rule{\paperwidth}{72mm}}
+            % logo
+            \put(-2,18){\includegraphics[height=12.8mm]{pictures/KYS_sin_left}}
+            %\put(-2,-15.5){\includegraphics[height=12.8mm]{pictures/KYS_sin_fi_print_pdf}}
+
+            % Title
+            \put(25,21.5){%
+                \begin{minipage}[c][30mm][c]{120mm}
+                    \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par%
+                    \usebeamerfont{subtitle}\usebeamercolor[fg]{title}\insertsubtitle\par%
+                \end{minipage}
+            }
+            % author etc
+            \put(30,-5){%
+                \begin{minipage}[c][35mm][c]{100mm}
+                    \ifx\insertauthor\empty\else
+                        \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor%
+                        \vskip0.2cm%
+                    \fi%
+                    \ifx\insertdate\empty\else
+                        \usebeamerfont{author}\usebeamercolor[fg]{author}\insertdate%
+                    \fi%
+                \end{minipage}
+            }
+            % author etc
+            \put(30,-20){%
+                \begin{minipage}[c][35mm][c]{100mm}
+                \ifx\insertinstitute\empty\else
+                    \usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute%
+                \fi%
+                \end{minipage}
+            }
+    \end{picture}
+}
 %
 % % Inner theme
 %
