@@ -304,18 +304,6 @@ $if(institute)$\institute{$institute$}$endif$
         % KYS logo
         \put(-2,-15.5){\includegraphics[height=12.8mm]{KYS_val_left}}
         % Title
-        \if(uef)
-        \put(26,-12){%
-            \begin{minipage}[c][30mm][c]{80mm}
-                \ifx\insertframetitle\empty\else
-                \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par%
-                \fi%
-                \ifx\insertframesubtitle\empty\else
-                \usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\par%
-                \fi%
-            \end{minipage}
-        }
-        \else
         \put(26,-12){%
             \begin{minipage}[c][30mm][c]{120mm}
                 \ifx\insertframetitle\empty\else
@@ -326,7 +314,6 @@ $if(institute)$\institute{$institute$}$endif$
                 \fi%
             \end{minipage}
         }
-        \fi
         % UEF logo
         % $if(uef)$
         % \put(95, -15.5){\includegraphics[height=12.8mm]{pictures/UEF_eng_vaaka_1_white}}
