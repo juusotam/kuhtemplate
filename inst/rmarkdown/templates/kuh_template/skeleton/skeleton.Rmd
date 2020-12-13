@@ -1,0 +1,25 @@
+---
+title: Title of the presentation
+subtitle: Subtitle of the presentation
+author: Juuso Tamminen
+date: "12.12.2020"
+institute: Unit, Kuopio University Hospital
+fontsize: 10pt
+output:
+ beamer_presentation:
+    template: kuh-template.tex
+    keep_tex: true
+    latex_engine: xelatex 
+    dev: cairo_pdf 
+    slide_level: 3
+make169: true
+#uef: false # set this true if you want also the UEF logo on content slides
+mainfont: "Open Sans" 
+titlefont: "Montserrat" 
+---
+
+# Introduction
+
+## Some basic stuff
+
+Here comes the text.

@@ -1,0 +1,10 @@
+Package: kuhtemplate
+Type: Package
+Title: Document templates for Kuopio University Hospital
+Version: 0.1.0
+Author: Juuso Tamminen
+Maintainer: Juuso Tamminen <juuso.tamminen@kuh.fi>
+Description: Description underway...
+License: GPLv3
+Encoding: UTF-8
+LazyData: true
