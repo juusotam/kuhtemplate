@@ -4,7 +4,7 @@
 
 find_file <- function(template, file) {
   template <- system.file("rmarkdown", "templates", template, file,
-                          package = "uiucthemes")
+                          package = "kuhtemplate")
   if (template == "") {
     stop("Couldn't find template file ", template, "/", file, call. = FALSE)
   }
@@ -26,6 +26,6 @@ load_resources_if_missing <- function(template_name, resources) {
   for (template_file in resources)
     if (!file.exists(template_file))
       file.copy(system.file("rmarkdown", "templates", template_name, "skeleton",
-                            template_file, package="uiucthemes"),
+                            template_file, package="kuhtemplate"),
                 ".")
 }
